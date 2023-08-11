@@ -10,6 +10,11 @@ Technologies Used:
 
 3.Javascript
 
+Preview Page:
+
+![WhatsApp Image 2023-08-11 at 7 18 20 PM](https://github.com/Poojarai63/Lift-Simulation/assets/138796761/3521fb70-24d8-40ec-9742-556078627d56)
+
+
 Project Structure:
 
 1.index.html: Contain the HTML structure of the elevator simulation.
