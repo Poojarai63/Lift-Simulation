@@ -1,22 +1,37 @@
-const elevator = document.querySelector('.elevator');
-const door = document.querySelector('.door');
+const doorLeft = document.querySelector('.door-left');
+const doorRight = document.querySelector('.door-right');
+const floorButtonsContainer = document.querySelector('.floor-buttons');
+const floorsInput = prompt('Enter the number of floors:');
 
-function goToFloor(floor){
-    const floorHeight = 100; 
-    const translation = (floor - 1) * floorHeight;
-    
-    openDoor();
-    
-    setTimeout(() => {
-        elevator.style.transform = `translateY(-${translation}px)`;
-        closeDoor();
-    }, 1000); 
+// Generate floor buttons dynamically based on user input
+function generateFloorButtons() {
+  floorButtonsContainer.innerHTML = '';
+  for (let floor = 1; floor <= floorsInput; floor++) {
+    const button = document.createElement('button');
+    button.className = 'floor-button';
+    button.textContent = floor;
+    button.addEventListener('click', () => {
+      moveElevator(floor);
+    });
+    floorButtonsContainer.appendChild(button);
+  }
 }
 
-function openDoor() {
-    door.style.width = '50px';
-}
+generateFloorButtons();
 
-function closeDoor() {
-    door.style.width = '0';
+doorLeft.addEventListener('click', () => {
+  doorLeft.style.transform = 'translateX(-50%)';
+  doorRight.style.transform = 'translateX(50%)';
+});
+
+doorRight.addEventListener('click', () => {
+  doorLeft.style.transform = 'translateX(0)';
+  doorRight.style.transform = 'translateX(0)';
+});
+
+function moveElevator(targetFloor) {
+  const elevator = document.querySelector('.elevator');
+  const floorHeight = 120; // Change this value based on your design
+  const targetPosition = floorHeight * (targetFloor - 1);
+  elevator.style.transform = `translateY(-${targetPosition}px)`;
 }

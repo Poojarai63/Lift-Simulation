@@ -5,37 +5,48 @@ body {
     height: 100vh;
     margin: 0;
     background-color: #f0f0f0;
-}
-
-.building {
-    display: flex;
-}
-
-.floor {
-    margin: 10px;
-}
-
-.floor-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    background-color: #db343f;
+  }
+  
+  .elevator {
+    width: 120px;
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .door {
+    position: relative;
+    width: 100%;
+    height: 100px;
+  }
+  
+  .door-left,
+  .door-right {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #ccc;
+    transition: all 0.5s;
+  }
+  
+  .door-left {
+    left: 0;
+  }
+  
+  .door-right {
+    right: 0;
+  }
+  
+  .floor-buttons {
+    margin-top: 20px;
+  }
+  
+  .floor-button {
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #555;
     color: white;
     border: none;
-    border-radius: 50%;
-}
-
-.elevator {
-    width: 60px;
-    height: 80px;
-    background-color: #141313;
-    position: relative;
-}
-
-.door {
-    width: 0;
-    height: 100%;
-    background-color: #ecf0f1;
-    position: absolute;
-    transition: width 0.5s;
-}
+    cursor: pointer;
+  }
+  
