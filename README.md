@@ -55,6 +55,8 @@ Usage:
 
 2.Click on the floor buttons to simulate the elevator moving to the selected floor.
 
+Deployment link:  https://poojarai63.github.io/Lift-Simulation/
+
 
 
 
